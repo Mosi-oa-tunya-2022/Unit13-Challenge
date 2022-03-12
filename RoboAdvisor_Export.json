@@ -21,7 +21,7 @@
         "version": "6",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-west-2:617911584745:function:RecommendPortfolio",
+            "uri": "arn:aws:lambda:us-west-2:301699807260:function:RecommendPortfolio",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -106,7 +106,7 @@
                   "content": "What level of investment risk would you like to take?"
                 }
               ],
-              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"https://github.com/Mosi-oa-tunya-2022/Unit13-Challenge/images/no-risk.jpg?raw=true\",\"subTitle\":\"No risk at all\",\"title\":\"None\",\"buttons\":[{\"text\":\"None\",\"value\":\"None\"}]},{\"imageUrl\":\"https://github.com/ltayara1/Robo_Advisor/blob/main/images/iconfinder_exercise-11_5850362.png?raw=true\",\"subTitle\":\"Just a bit of risk\",\"title\":\"Very Low or Low\",\"buttons\":[{\"text\":\"Very Low\",\"value\":\"Very Low\"},{\"text\":\"Low\",\"value\":\"Low\"}]},{\"imageUrl\":\"https://github.com/ltayara1/Robo_Advisor/blob/main/images/iconfinder_exercise-06_5850360.png?raw=true\",\"subTitle\":\"Let's get wild.\",\"title\":\"Medium\",\"buttons\":[{\"text\":\"Medium\",\"value\":\"Medium\"}]},{\"imageUrl\":\"https://github.com/ltayara1/Robo_Advisor/blob/main/images/iconfinder_exercise-07_5850359.png?raw=true\",\"subTitle\":\"I have no fear!\",\"title\":\"High or Very High\",\"buttons\":[{\"text\":\"High\",\"value\":\"High\"},{\"text\":\"Very High\",\"value\":\"Very High\"}]}]}",
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"https://github.com/Mosi-oa-tunya-2022/Unit13-Challenge/images/no-risk.jpg?raw=true\",\"subTitle\":\"No risk at all\",\"title\":\"None\",\"buttons\":[{\"text\":\"None\",\"value\":\"None\"}]},{\"imageUrl\":\"https://github.com/Mosi-oa-tunya-2022/Unit13-Challenge/images/no-risk.jpg?raw=true\",\"subTitle\":\"Just a bit of risk\",\"title\":\"Very Low or Low\",\"buttons\":[{\"text\":\"Very Low\",\"value\":\"Very Low\"},{\"text\":\"Low\",\"value\":\"Low\"}]},{\"imageUrl\":\"https://github.com/Mosi-oa-tunya-2022/Unit13-Challenge/images/very-high-risk.jpg?raw=true\",\"subTitle\":\"Let's get wild.\",\"title\":\"Medium\",\"buttons\":[{\"text\":\"Medium\",\"value\":\"Medium\"}]},{\"imageUrl\":\"https://github.com/Mosi-oa-tunya-2022/Unit13-Challenge/images/high-risk.jpg?raw=true\",\"subTitle\":\"I have no fear!\",\"title\":\"High or Very High\",\"buttons\":[{\"text\":\"High\",\"value\":\"High\"},{\"text\":\"Very High\",\"value\":\"Very High\"}]}]}",
               "maxAttempts": 2
             },
             "priority": 4,
@@ -123,7 +123,7 @@
           "maxAttempts": 3
         },
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-west-2:617911584745:function:RecommendPortfolio",
+          "uri": "arn:aws:lambda:us-west-2:301699807260:function:RecommendPortfolio",
           "messageVersion": "1.0"
         }
       }
