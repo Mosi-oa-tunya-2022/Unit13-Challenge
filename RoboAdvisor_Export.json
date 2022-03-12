@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "RoboAdvisor",
+    "version": "1",
+    "intents": [
+      {
+        "rejectionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "No problem, I will be pleased to assist you in the future."
+            }
+          ]
+        },
+        "name": "RecommendPortfolio",
+        "version": "6",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-west-2:617911584745:function:RecommendPortfolio",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "I want to save money for my retirement",
+          "I'm {age} and I would like to invest for my retirement",
+          "I'm {age} and I want to invest for my retirement",
+          "I'm worried about my retirement",
+          "I want to invest for my retirement",
+          "I would like to invest for my retirement",
+          "I want to go on a permanent vacation",
+          "I don't want to work anymore",
+          "I need to retire early",
+          "I would like to retire early",
+          "I want to live that quarantine life",
+          "I hate working",
+          "I would like to pursue my hobbies"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.NUMBER",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "How old are you?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "age"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.US_FIRST_NAME",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Thank you for trusting me to help, could you please give me your name?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "firstName"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.NUMBER",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": " How much do you want to invest?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 3,
+            "name": "investmentAmount"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "RiskLevel",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "DEFAULT_OBFUSCATION",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What level of investment risk would you like to take?"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"https://github.com/Mosi-oa-tunya-2022/Unit13-Challenge/images/no-risk.jpg?raw=true\",\"subTitle\":\"No risk at all\",\"title\":\"None\",\"buttons\":[{\"text\":\"None\",\"value\":\"None\"}]},{\"imageUrl\":\"https://github.com/ltayara1/Robo_Advisor/blob/main/images/iconfinder_exercise-11_5850362.png?raw=true\",\"subTitle\":\"Just a bit of risk\",\"title\":\"Very Low or Low\",\"buttons\":[{\"text\":\"Very Low\",\"value\":\"Very Low\"},{\"text\":\"Low\",\"value\":\"Low\"}]},{\"imageUrl\":\"https://github.com/ltayara1/Robo_Advisor/blob/main/images/iconfinder_exercise-06_5850360.png?raw=true\",\"subTitle\":\"Let's get wild.\",\"title\":\"Medium\",\"buttons\":[{\"text\":\"Medium\",\"value\":\"Medium\"}]},{\"imageUrl\":\"https://github.com/ltayara1/Robo_Advisor/blob/main/images/iconfinder_exercise-07_5850359.png?raw=true\",\"subTitle\":\"I have no fear!\",\"title\":\"High or Very High\",\"buttons\":[{\"text\":\"High\",\"value\":\"High\"},{\"text\":\"Very High\",\"value\":\"Very High\"}]}]}",
+              "maxAttempts": 2
+            },
+            "priority": 4,
+            "name": "riskLevel"
+          }
+        ],
+        "confirmationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Thanks, are you sure you want this level of risk?"
+            }
+          ],
+          "maxAttempts": 3
+        },
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:us-west-2:617911584745:function:RecommendPortfolio",
+          "messageVersion": "1.0"
+        }
+      }
+    ],
+    "slotTypes": [
+      {
+        "name": "RiskLevel",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "High",
+            "synonyms": [
+              "Maximum",
+              "aggressive"
+            ]
+          },
+          {
+            "value": "Very Low",
+            "synonyms": [
+              "Minimum",
+              "weak"
+            ]
+          },
+          {
+            "value": "Low",
+            "synonyms": [
+              "minimal",
+              "weak"
+            ]
+          },
+          {
+            "value": "Medium",
+            "synonyms": [
+              "moderate"
+            ]
+          },
+          {
+            "value": "Very High",
+            "synonyms": [
+              "Maximum",
+              "aggressive"
+            ]
+          },
+          {
+            "value": "None",
+            "synonyms": [
+              "No"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      }
+    ],
+    "voiceId": "Salli",
+    "childDirected": false,
+    "locale": "en-US",
+    "idleSessionTTLInSeconds": 300,
+    "clarificationPrompt": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, can you please repeat that?"
+        }
+      ],
+      "maxAttempts": 2
+    },
+    "abortStatement": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, I could not understand. Goodbye."
+        }
+      ]
+    },
+    "detectSentiment": false,
+    "enableModelImprovements": false
+  }
+}
